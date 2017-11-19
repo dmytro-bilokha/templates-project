@@ -39,6 +39,18 @@
                     <version>7</version>
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
                     <fileNameMapping>no-version</fileNameMapping>
+                    <skinnyWars>true</skinnyWars>
+                    <modules>
+                        <webModule>
+                            <groupId>com.dmytrobilokha</groupId>
+                            <artifactId>helloworld-ee7-web</artifactId>
+                            <contextRoot>/helloworld-ee7</contextRoot>
+                        </webModule>
+                        <ejbModule>
+                            <groupId>com.dmytrobilokha</groupId>
+                            <artifactId>helloworld-ee7-ejb</artifactId>
+                        </ejbModule>
+                    </modules>
                 </configuration>
             </plugin>
         </plugins>

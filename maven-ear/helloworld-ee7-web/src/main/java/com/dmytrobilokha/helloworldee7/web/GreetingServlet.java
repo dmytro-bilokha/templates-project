@@ -1,6 +1,8 @@
 package com.dmytrobilokha.helloworldee7.web;
 
 import com.dmytrobilokha.helloworldee7.ejb.GreetingService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -14,11 +16,14 @@ import java.io.PrintWriter;
 @WebServlet(urlPatterns = "/hello")
 public class GreetingServlet extends HttpServlet {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(GreetingServlet.class);
+
     @Inject
     private GreetingService greetingService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        LOGGER.info("GreetingServlet doGet called");
         PrintWriter output = resp.getWriter();
         output.print("<html><body><p>");
         output.print(greetingService.createGreeting());
